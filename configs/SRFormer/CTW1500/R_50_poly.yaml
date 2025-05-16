@@ -1,0 +1,31 @@
+_BASE_: "../Base.yaml"
+
+DATASETS:
+#  TRAIN: ("ctw1500_poly_train_rotate_pos",)
+  TRAIN: ("ctw1500_poly_test",)
+  TEST: ("ctw1500_poly_test",)
+
+MODEL:
+  WEIGHTS: ""  # or the provided pre-trained model
+#MODEL:
+#  WEIGHTS: ""  # or the provided pre-trained model
+
+SOLVER:
+  IMS_PER_BATCH: 1
+  BASE_LR: 5e-5
+  LR_BACKBONE: 5e-6
+  WARMUP_ITERS: 0
+  STEPS: (24000,)
+  MAX_ITER: 10000 #30000
+  CHECKPOINT_PERIOD: 100000 # No ckpt
+
+INPUT:
+  MIN_SIZE_TEST: 1000
+  MAX_SIZE_TEST: 1280
+
+TEST:
+  EVAL_PERIOD: 500
+
+
+OUTPUT_DIR: ""
+
